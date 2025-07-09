@@ -10,8 +10,10 @@ export class InputController {
 
     @Post("/create")
     async createData(@Body() createInputDto: CreateInputDto) {
+        console.log('Incoming Data:', createInputDto);
         try {
             return await this.inputService.create(createInputDto)
+            
 
         } catch (error) {
             throw new HttpException('Failed to create input', HttpStatus.INTERNAL_SERVER_ERROR);

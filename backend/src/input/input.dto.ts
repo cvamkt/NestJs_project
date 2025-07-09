@@ -5,10 +5,9 @@ import { ArrayNotEmpty, IsArray, IsNotEmpty, IsNumber, IsString } from "class-va
 export class CreateInputDto {
     @IsArray()
     @ArrayNotEmpty()
-    @Type(() => Number)
-    @IsNumber({}, { each: true })
+    @IsString( { each: true })
     @IsNotEmpty()
-    x: number[];
+    x: string[];
 
     @IsArray()
     @ArrayNotEmpty()

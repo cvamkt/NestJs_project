@@ -11,10 +11,11 @@ export class InputService{
         private inputModel : Model<InputData>,
     ){}
     // POST
-    async create (data: {x: number[]; y: number[]}){
-        const newData = new this.inputModel(data);
-        return newData.save();
-    }
+   async create(data: { x: string[]; y: number[] }) {
+  const newData = new this.inputModel(data);
+  return newData.save();
+}
+
 
     //GET
     async findAll() {

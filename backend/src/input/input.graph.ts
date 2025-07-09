@@ -22,7 +22,9 @@ export class InputResolver {
         @Args('x', { type: () => [Number] }) x: number[],
         @Args('y', { type: () => [Number] }) y: number[],
     ) {
-        const createInputDto: CreateInputDto = { x, y };
+        const createInputDto: CreateInputDto = { x:x.map(String),
+             y 
+            };
         return this.inputService.create(createInputDto);
     }
 }

@@ -3,10 +3,10 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class InputData extends Document {
-  @Prop([Number])
-  x: number[];
+  @Prop({ type: [String], required: true })
+  x: string[];
 
-  @Prop([Number])
+  @Prop({ type: [Number], required: true })
   y: number[];
 }
 
