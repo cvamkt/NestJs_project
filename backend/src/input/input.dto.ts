@@ -1,19 +1,21 @@
 
 import { Type } from "class-transformer";
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import {  IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class CreateInputDto {
-    @IsArray()
-    @ArrayNotEmpty()
-    @IsString( { each: true })
+    // @IsArray()
+    // @ArrayNotEmpty()
+    // @IsString( { each: true })
+    @IsString()
     @IsNotEmpty()
-    x: string[];
+    x: string;
 
-    @IsArray()
-    @ArrayNotEmpty()
+    // @IsArray()
+    // @ArrayNotEmpty()
+    // @IsNumber({}, { each: true })
     @Type(() => Number)
-    @IsNumber({}, { each: true })
+    @IsNumber()
     @IsNotEmpty()
-    y: number[];
+    y: number;
 
 }

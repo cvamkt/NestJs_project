@@ -19,12 +19,10 @@ export class InputResolver {
 
     async createInput(
 
-        @Args('x', { type: () => [Number] }) x: number[],
-        @Args('y', { type: () => [Number] }) y: number[],
+        @Args('x', { type: () => String }) x: string,
+        @Args('y', { type: () => Number }) y: number,
     ) {
-        const createInputDto: CreateInputDto = { x:x.map(String),
-             y 
-            };
+        const createInputDto: CreateInputDto = {x,y};
         return this.inputService.create(createInputDto);
     }
 }

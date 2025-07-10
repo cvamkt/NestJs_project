@@ -26,17 +26,17 @@ function App() {
     if (subject && score !== "") {
       try {
         await axios.post("http://localhost:3000/input/create", {
-          x: [subject],
-          y: [Number(score)],
+          x: subject,
+          y: Number(score),
         });
 
         const response = await axios.get("http://localhost:3000/input/all");
 
         const allSubjects: string[] = [];
         const allScores: number[] = [];
-        response.data.forEach((entry: { x: string[]; y: number[] }) => {
-          allSubjects.push(...entry.x);
-          allScores.push(...entry.y);
+        response.data.forEach((entry: { x: string; y: number }) => {
+          allSubjects.push(entry.x);
+          allScores.push(entry.y);
         });
 
         setGraphData({ x: allSubjects, y: allScores });

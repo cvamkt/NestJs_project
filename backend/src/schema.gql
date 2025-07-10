@@ -12,5 +12,5 @@ type Query {
 }
 
 type Mutation {
-  createInput(x: [Float!]!, y: [Float!]!): inputModel!
+  createInput(x: String!, y: Float!): inputModel!
 }

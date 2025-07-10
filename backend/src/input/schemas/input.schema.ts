@@ -3,11 +3,11 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class InputData extends Document {
-  @Prop({ type: [String], required: true })
-  x: string[];
+  @Prop({  required: true })
+  x: string;
 
-  @Prop({ type: [Number], required: true })
-  y: number[];
+  @Prop({ type: Number, required: true })
+  y: number;
 }
 
 export const InputDataSchema = SchemaFactory.createForClass(InputData);
